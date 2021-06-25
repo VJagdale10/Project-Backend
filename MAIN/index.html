@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
-    <script src="script.js"></script>
+    <!--<script src="script.js"></script>-->
 
 </head>
 
@@ -19,14 +19,14 @@
 
     <header>
 
-        <a href="#" class="logo">i<span  class="fal fa-head-side"></span>Neuro</a>
+        <a href="#" class="logo">I<span  class="fal fa-head-side"></span>Neuro</a>
         <div id="menu" class="fas fa-bars"></div>
 
         <nav class="navbar">
-            <a class="active" href="#home">home</a>
+            <a class="active" href="#home">Home</a>
             <a href="#prevent">Symptoms</a>
             <a href="#appointment">Appointments</a>
-            <a href="#doctor">doctors</a>
+            <a href="#doctor">Doctors</a>
             <a href="Elements/cartpage/cart.html">Purchase</a>
         </nav>
 
@@ -97,7 +97,8 @@
 
 
     <!-- Appointment section starts  -->
-    <form action="Elements/Payment/pay.html" onsubmit="return(validatedetails());"></form>
+
+
 
     <section class="appointment" id="appointment">
 
@@ -109,21 +110,21 @@
 
                 <h3 class="title">Your details for the appointment </h3>
 
-                <form action="SEND ADDRESS" id="ft-form" method="POST" accept-charset="UTF-8">
+                <form action="/appointment" id="ft-form" method="POST" accept-charset="UTF-8">
                     <fieldset>
 
                         <label>
                         Name
-                        <input type="text" name="name" required>
+                        <input type="text" name="name" required name="entry.364295968">
                       </label>
                         <div class="two-cols">
                             <label>
                           Email address
-                          <input type="email" name="email" required>
+                          <input type="email" name="email" required name="entry.304934206">
                         </label>
                             <label>
                           Phone number
-                          <input type="tel" name="phone">
+                          <input type="tel" name="phno" required name="entry.1661940655">
                         </label>
                         </div>
                     </fieldset>
@@ -132,42 +133,42 @@
                         <div class="two-cols">
                             <label>
                           Date
-                          <input type="date" name="Appointment request" required>
+                          <input type="date" name="appointment_date" required name="entry.1735440850">
                         </label>
                             <div class="inline">
+
                                 <label>
-                            <input type="hidden" name="Morning desired" value="no">
-                            <input type="checkbox" name="Morning desired" value="yes">
+                            <input type="hidden" name="morning_desired" value="no">
+                            <input type="checkbox" name="morning_desired" value="yes">
                             Morning [9:00AM-12:00PM]
                           </label>
                                 <label>
-                            <input type="hidden" name="Evening desired" value="no">
-                            <input type="checkbox" name="Evening desired" value="yes">
+                            <input type="hidden" name="evening_desired" value="no">
+                            <input type="checkbox" name="evening_desired" value="yes">
                             Evening [4:00PM-7:00PM]
                           </label>
+
                             </div>
                         </div>
                         <p><br>Confirmation requested by</p>
                         <div class="inline">
+
                             <label>
-                          <input type="radio" name="Confirmation requested by" value="email" checked>
+                          <input type="radio" name="confirm_by" value="email" checked>
                           Email
                         </label>
                             <label>
-                          <input type="radio" name="Confirmation requested by" value="phone">
+                          <input type="radio" name="confirm_by" value="phone">
                           Phone call
                         </label>
+
                         </div>
                     </fieldset>
                     <div class="btns">
-                        <a href="Elements/Payment/pay.html"></a>
-
-
                         <input type="text" name="_gotcha" value="" style="display:none;">
                         <input type="submit" value="Submit request">
 
-
-
+                        <!--<a href="Elements/Payment/pay.html"></a>-->
                     </div>
                 </form>
 
@@ -281,8 +282,8 @@
         <!-- jquery cdn link  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-        <!-- custom js file link  -->
-        <script src="js/script.js"></script>
+        <!-- custom js file link -->
+        <script src="script.js"></script>
 
 
 </body>
