@@ -97,7 +97,7 @@
 
 
     <!-- Appointment section starts  -->
-    <form action="Elements/Payment/pay.html" onsubmit="return(validatedetails());"></form>
+    <form action="/appointment" onsubmit="return(validatedetails());"></form>
 
     <section class="appointment" id="appointment">
 
@@ -123,7 +123,7 @@
                         </label>
                             <label>
                           Phone number
-                          <input type="tel" name="phone">
+                          <input type="tel" name="phno">
                         </label>
                         </div>
                     </fieldset>
@@ -132,17 +132,17 @@
                         <div class="two-cols">
                             <label>
                           Date
-                          <input type="date" name="Appointment request" required>
+                          <input type="date" name="appointment_date" required>
                         </label>
                             <div class="inline">
                                 <label>
-                            <input type="hidden" name="Morning desired" value="no">
-                            <input type="checkbox" name="Morning desired" value="yes">
+                            <input type="hidden" name="morning_desired" value="no">
+                            <input type="checkbox" name="morning_desired" value="yes">
                             Morning [9:00AM-12:00PM]
                           </label>
                                 <label>
-                            <input type="hidden" name="Evening desired" value="no">
-                            <input type="checkbox" name="Evening desired" value="yes">
+                            <input type="hidden" name="evening_desired" value="no">
+                            <input type="checkbox" name="evening_desired" value="yes">
                             Evening [4:00PM-7:00PM]
                           </label>
                             </div>
@@ -150,11 +150,11 @@
                         <p><br>Confirmation requested by</p>
                         <div class="inline">
                             <label>
-                          <input type="radio" name="Confirmation requested by" value="email" checked>
+                          <input type="radio" name="confirmation_by" value="email" checked>
                           Email
                         </label>
                             <label>
-                          <input type="radio" name="Confirmation requested by" value="phone">
+                          <input type="radio" name="confirmation_by" value="phone">
                           Phone call
                         </label>
                         </div>
