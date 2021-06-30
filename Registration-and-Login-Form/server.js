@@ -6,9 +6,9 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
+var MongoStore = require('connect-mongo');
 
-mongoose.connect('mongodb+srv://user123:userpass123@cluster0.cp2c5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://loginregister:loginregister123@cluster0.cp2c5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, (err) => {
@@ -24,23 +24,26 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {});
 
 app.use(session({
-    secret: 'work hard',
-    resave: true,
+    secret: 'story book',
+    resave: false,
     saveUninitialized: false,
-    store: new MongoStore({
-        mongooseConnection: db
-    })
+    store: MongoStore.create({ mongoUrl: 'mongodb+srv://<loginregister+ loginregister123>@cluster0.cp2c5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority' })
 }));
 
-app.set('views', path.join(__dirname, 'views'));
+router.get('/index', function(req, res, next) {
+    res.render('path/to/ejs/views/index');
+});
+
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, './public/views'));
+app.use(express.static(path.join(__dirname + '/views/css')));
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static(__dirname + '/views'));
 
-var index = require('./routes/index');
+var index = require('./public/routes/index');
 app.use('/', index);
 
 // catch 404 and forward to error handler
@@ -58,7 +61,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-const PORT = process.env.PORT || 3080;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, function() {
     console.log(`Server is started on ${PORT}`)
 });
